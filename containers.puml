@@ -1,0 +1,18 @@
+@startuml containers
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title "Digital Wallet Full Cycle"
+
+Person(client, "Client", "Digital Wallet User")
+
+System_Ext(payment_gateway, "Payment Gateway", "Payment Processor")
+
+System_Boundary(digital_wallet, "Digital Wallet") {
+  Container(spa, "SPA", "React", "Digital Wallet Web App")
+  Container(wallet_core, "Wallet Core", "TypeScript", "Wallet Core is responsible for the transactions")
+  Container(balance_service, "Balance Microservice", "TypeScript", "Returns customer balance")
+  Container(statement_service, "Statement Microservice", "TypeScript", "Returns customer statement")
+  Container(payment_acl, "Payment ACL", "TypeScript", "Anti-corruption layer for payment gateway")
+}
+
+@enduml
