@@ -1,0 +1,12 @@
+{
+  "editor.rulers": [80, 120],
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.organizeImports": "always",
+    "source.removeUnusedImports": "always",
+    "source.addMissingImports": "always"
+  },
+  "cSpell.words": ["enduml", "startuml"]
+}
