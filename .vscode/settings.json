@@ -5,7 +5,16 @@
   "[plantuml]": {
     "editor.defaultFormatter": "jebbs.plantuml"
   },
-  "cSpell.words": ["enduml", "github", "higorrsc", "hrsc", "startuml", "uuid"],
+  "cSpell.words": [
+    "enduml",
+    "github",
+    "higorrsc",
+    "hrsc",
+    "sqlite",
+    "startuml",
+    "uuid",
+    "VARCHAR"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always",
     "source.organizeImports": "always",
