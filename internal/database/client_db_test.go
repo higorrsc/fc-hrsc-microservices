@@ -4,7 +4,10 @@ import (
 	"database/sql"
 	"testing"
 
+	"github.com/higorrsc/fc-hrsc-microservices/internal/entity"
 	"github.com/stretchr/testify/suite"
+
+	_ "github.com/mattn/go-sqlite3"
 )
 
 type ClientDBTestSuite struct {
@@ -28,4 +31,22 @@ func (suite *ClientDBTestSuite) TearDownSuite() {
 
 func TestClientDBTestSuite(t *testing.T) {
 	suite.Run(t, new(ClientDBTestSuite))
+}
+
+func (suite *ClientDBTestSuite) TestSave() {
+	client, _ := entity.NewClient("John Doe", "L4uQK@example.com")
+	err := suite.clientDB.Save(client)
+	suite.Nil(err)
+}
+
+func (suite *ClientDBTestSuite) TestGet() {
+	client, _ := entity.NewClient("John Doe", "L4uQK@example.com")
+	suite.clientDB.Save(client)
+
+	clientDB, err := suite.clientDB.Get(client.ID)
+	suite.Nil(err)
+	suite.NotNil(clientDB)
+	suite.Equal(client.ID, clientDB.ID)
+	suite.Equal(client.Name, clientDB.Name)
+	suite.Equal(client.Email, clientDB.Email)
 }
