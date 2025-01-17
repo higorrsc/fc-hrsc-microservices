@@ -21,7 +21,7 @@ func TestCreateTransaction(t *testing.T) {
 	assert.NotNil(t, transaction)
 	assert.Equal(t, 100.00, transaction.Amount)
 	assert.Equal(t, transaction.AccountFrom.ID, accountFrom.ID)
-	assert.Equal(t, 900, accountFrom.Balance)
+	assert.Equal(t, 900.00, accountFrom.Balance)
 	assert.Equal(t, transaction.AccountTo.ID, accountTo.ID)
 	assert.Equal(t, 1100.00, accountTo.Balance)
 }
