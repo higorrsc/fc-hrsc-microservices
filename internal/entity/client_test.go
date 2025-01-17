@@ -19,3 +19,18 @@ func TestCreateNewClientWhenArgsAreInvalid(t *testing.T) {
 	assert.NotNil(t, err)
 	assert.Nil(t, client)
 }
+
+func TestUpdateClient(t *testing.T) {
+	client, _ := NewClient("John Doe", "L4uQK@example.com")
+	err := client.Update("Jane Doe Updated", "onpen@huitiho.lv")
+	assert.Nil(t, err)
+	assert.Equal(t, "Jane Doe Updated", client.Name)
+	assert.Equal(t, "onpen@huitiho.lv", client.Email)
+}
+
+func TestUpdateClientWhenArgsAreInvalid(t *testing.T) {
+	client, _ := NewClient("John Doe", "L4uQK@example.com")
+	err := client.Update("", "L4uQK@example.com")
+	assert.NotNil(t, err)
+	assert.Error(t, err, "Name is required")
+}
