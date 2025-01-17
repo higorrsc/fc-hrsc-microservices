@@ -1,4 +1,10 @@
 {
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[plantuml]": {
+    "editor.defaultFormatter": "jebbs.plantuml"
+  },
   "cSpell.words": ["enduml", "startuml", "uuid"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always",
@@ -9,10 +15,6 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.rulers": [80, 120],
-  "[go]": {
-    "editor.defaultFormatter": "golang.go"
-  },
-  "[plantuml]": {
-    "editor.defaultFormatter": "jebbs.plantuml"
-  }
+  "go.inlayHints.functionTypeParameters": true,
+  "go.inlayHints.parameterNames": true
 }
